@@ -3,11 +3,16 @@ using System.Collections.Generic;
 
 public enum SkillType {Process, Probe};
 
+public enum SkillProgress {UnAvailable, Available, Learned, Bought};
+
+
 public class SkillSystem : MonoBehaviour {
 
 	static SkillSystem _instance;
 
 	static Dictionary<ProcSkills, ProcSkill> procSkills = new Dictionary<ProcSkills, ProcSkill>();
+
+	static Dictionary<ProbeSkills, ProbeSkill> probeSkills = new Dictionary<ProbeSkills, ProbeSkill>();
 
 	static SkillSystem instance {
 		get {
@@ -40,15 +45,23 @@ public class SkillSystem : MonoBehaviour {
 	}
 
 	void Start() {
-		var skills = GetComponentsInChildren<ProcSkill> ();
-		for (int i = 0; i < skills.Length; i++) {
-			RegisterSkill (skills [i]);
-		}
+		var _procSkills = GetComponentsInChildren<ProcSkill> ();
+		for (int i = 0; i < _procSkills.Length; i++) 
+			RegisterSkill (_procSkills [i]);		
+
+		var _probeSkills = GetComponentsInChildren<ProbeSkill> ();
+		for (int i = 0; i < _probeSkills.Length; i++)
+			RegisterSkill (_probeSkills [i]);
 	}
 
 	public static void RegisterSkill(ProcSkill skill) {
 		if (!procSkills.ContainsKey(skill.skillType) || procSkills[skill.skillType] != skill)
 			procSkills [skill.skillType] = skill;
+	}
+
+	public static void RegisterSkill(ProbeSkill skill) {
+		if (!probeSkills.ContainsKey (skill.skillType) || probeSkills [skill.skillType] != skill)
+			probeSkills [skill.skillType] = skill;
 	}
 
 }

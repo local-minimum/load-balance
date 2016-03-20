@@ -3,8 +3,6 @@ using System.Collections;
 
 public enum ProcSkills {Frag, Flip, Push, Mash, Rend, Zoom, Unknown};
 
-public enum SkillProgress {UnAvailable, Available, Learned, Bought};
-
 public delegate void ProcSkillChange(PlayerIdentity player, ProcSkills skill, SkillProgress progress);
 
 public class ProcSkill : MonoBehaviour {
