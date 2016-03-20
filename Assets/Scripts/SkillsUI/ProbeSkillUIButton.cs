@@ -2,12 +2,13 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ProcSkillUIButton : MonoBehaviour {
+public class ProbeSkillUIButton : MonoBehaviour {
 
-	[SerializeField]
-	ProcSkills skillType;
+	[SerializeField] Color32 learnedColor;
 
-	ProcSkill _skill;
+	[SerializeField] ProbeSkills skill;
+
+	ProbeSkill _skill;
 
 	Button button;
 	Text buttonText;
@@ -21,23 +22,27 @@ public class ProcSkillUIButton : MonoBehaviour {
 		button = GetComponent<Button> ();
 		buttonText = GetComponentInChildren<Text> ();
 
-		_skill = SkillSystem.getSkill (skillType);
+		_skill = SkillSystem.getSkill (skill);
 		if (_skill == null) {
 			button.interactable = false;
 			buttonText.text = "?";
 		} else {
-			button.interactable = _skill.progress != SkillProgress.UnAvailable && hasCredit;
+			button.interactable = _skill.progress == SkillProgress.Available && hasCredit;
+			if (_skill.progress == SkillProgress.Learned || _skill.progress == SkillProgress.Bought) {
+				var colors = button.colors;
+				colors.disabledColor = learnedColor;
+			}
 			buttonText.text = _skill.buttonCharacter;
 		}
 	}
-	
+
 	void OnEnable() {
-		ProcSkill.OnSkillChange += HandleSkillProgress;
+		ProbeSkill.OnProbeSkillChange += HandleSkillProgress;
 		PlayerCredits.OnPlayerCreditsChange += HandleCreditsChange;
 	}
-		
+
 	void OnDisable() {
-		ProcSkill.OnSkillChange -= HandleSkillProgress;
+		ProbeSkill.OnProbeSkillChange -= HandleSkillProgress;
 		PlayerCredits.OnPlayerCreditsChange -= HandleCreditsChange;
 	}
 
@@ -50,13 +55,16 @@ public class ProcSkillUIButton : MonoBehaviour {
 		if (hasCredit == (direction == Direction.Increase))
 			return;
 
+		if (_skill.progress == SkillProgress.Learned || _skill.progress == SkillProgress.Bought)
+			return;
+		
 		hasCredit = _skill != null && _skill.actionCost <= credits;
-		button.interactable = hasCredit && _skill.progress != SkillProgress.UnAvailable;
+		button.interactable = hasCredit && _skill.progress == SkillProgress.Available;
 	}
 
-	void HandleSkillProgress (PlayerIdentity player, ProcSkills skill, SkillProgress progress)
+	void HandleSkillProgress (PlayerIdentity player, ProbeSkills skill, SkillProgress progress)
 	{
-		if (player == Player.LocalPlayerIdentity && skill == skillType) {
+		if (player == Player.LocalPlayerIdentity && skill == this.skill) {
 			if (_skill == null) {
 				_skill = SkillSystem.getSkill (skill);
 				buttonText.text = _skill.buttonCharacter;
@@ -64,6 +72,11 @@ public class ProcSkillUIButton : MonoBehaviour {
 
 			if (progress == SkillProgress.UnAvailable) {
 				button.interactable = false;
+			} else if (progress == SkillProgress.Learned || progress == SkillProgress.Bought) {
+				button.interactable = false;
+				var colors = button.colors;
+				colors.disabledColor = learnedColor;
+				button.colors = colors;
 			} else {
 				button.interactable = hasCredit;
 			}
@@ -84,4 +97,5 @@ public class ProcSkillUIButton : MonoBehaviour {
 		if (_skill)
 			_skill.Increase ();
 	}
+
 }

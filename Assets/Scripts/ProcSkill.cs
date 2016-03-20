@@ -107,8 +107,8 @@ public class ProcSkill : MonoBehaviour {
 		if (player != Player.LocalPlayerIdentity)
 			return;
 
-		if (progress == SkillProgress.UnAvailable && AllRequirementsMet) {
-			progress = SkillProgress.Available;
+		if (_progress == SkillProgress.UnAvailable && AllRequirementsMet) {
+			_progress = SkillProgress.Available;
 			if (OnSkillChange != null)
 				OnSkillChange (Player.LocalPlayerIdentity, skillType, _progress);
 		}

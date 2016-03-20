@@ -13,6 +13,12 @@ public class ProbeSkill : MonoBehaviour {
 
 	SkillProgress _progress = SkillProgress.UnAvailable;
 
+	public SkillProgress progress {
+		get {
+			return _progress;
+		}
+	}
+
 	public string buttonCharacter = "A";
 	public string hintText = "";
 
@@ -69,8 +75,8 @@ public class ProbeSkill : MonoBehaviour {
 		if (player != Player.LocalPlayerIdentity)
 			return;
 
-		if (progress == SkillProgress.UnAvailable && AllRequirementsMet) {
-			progress = SkillProgress.Available;
+		if (_progress == SkillProgress.UnAvailable && AllRequirementsMet) {
+			_progress = SkillProgress.Available;
 			if (OnProbeSkillChange != null)
 				OnProbeSkillChange (Player.LocalPlayerIdentity, skillType, _progress);
 		}

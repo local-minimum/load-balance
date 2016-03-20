@@ -36,6 +36,12 @@ public class SkillSystem : MonoBehaviour {
 			return procSkills[skill];
 		return null;
 	}
+
+	public static ProbeSkill getSkill(ProbeSkills skill) {
+		if (probeSkills.ContainsKey(skill))
+			return probeSkills[skill];
+		return null;
+	}
 		
 	void Awake () {
 		if (_instance == null)

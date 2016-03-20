@@ -160,6 +160,10 @@ MonoBehaviour:
   skillType: 3
   buttonCharacter: S
   hintText: Job scan
+  learningCost: 0
+  buyingCost: 0
+  requirements:
+  - {fileID: 1081089239}
 --- !u!1 &58920877
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,8 +394,8 @@ GameObject:
   - 222: {fileID: 123239553}
   - 114: {fileID: 123239552}
   - 114: {fileID: 123239551}
-  - 114: {fileID: 123239550}
   - 114: {fileID: 123239549}
+  - 114: {fileID: 123239550}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -472,10 +476,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 123239547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3748c64aae84a1043b266c40b7959d8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 857f25db61442984cadf0f4998ee2b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 5
+  learnedColor:
+    serializedVersion: 2
+    rgba: 4288687241
+  skill: 3
 --- !u!114 &123239551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,6 +647,9 @@ MonoBehaviour:
   skillType: 9
   buttonCharacter: E
   hintText: Expand stack
+  learningCost: 0
+  buyingCost: 0
+  requirements: []
 --- !u!1 &185464033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3404,6 +3414,9 @@ MonoBehaviour:
   skillType: 2
   buttonCharacter: S
   hintText: Quick job survey
+  learningCost: 0
+  buyingCost: 0
+  requirements: []
 --- !u!1 &1114819162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3864,8 +3877,8 @@ GameObject:
   - 222: {fileID: 1207703699}
   - 114: {fileID: 1207703698}
   - 114: {fileID: 1207703697}
-  - 114: {fileID: 1207703696}
   - 114: {fileID: 1207703695}
+  - 114: {fileID: 1207703696}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3946,10 +3959,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1207703693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3748c64aae84a1043b266c40b7959d8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 857f25db61442984cadf0f4998ee2b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 0
+  learnedColor:
+    serializedVersion: 2
+    rgba: 4288687241
+  skill: 2
 --- !u!114 &1207703697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4046,8 +4062,8 @@ GameObject:
   - 222: {fileID: 1212018124}
   - 114: {fileID: 1212018123}
   - 114: {fileID: 1212018122}
-  - 114: {fileID: 1212018121}
   - 114: {fileID: 1212018120}
+  - 114: {fileID: 1212018121}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -4128,10 +4144,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1212018118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3748c64aae84a1043b266c40b7959d8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 857f25db61442984cadf0f4998ee2b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 6
+  learnedColor:
+    serializedVersion: 2
+    rgba: 4288687241
+  skill: 4
 --- !u!114 &1212018122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4448,7 +4467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: Quick Hinting
+  m_Text: 
 --- !u!222 &1280926480
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4692,6 +4711,10 @@ MonoBehaviour:
   skillType: 6
   buttonCharacter: H
   hintText: Hack
+  learningCost: 0
+  buyingCost: 0
+  requirements:
+  - {fileID: 1875555613}
 --- !u!1 &1402615545
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,6 +4824,10 @@ MonoBehaviour:
   skillType: 4
   buttonCharacter: M
   hintText: Complete job map
+  learningCost: 0
+  buyingCost: 0
+  requirements:
+  - {fileID: 36545672}
 --- !u!1 &1457560094
 GameObject:
   m_ObjectHideFlags: 0
@@ -6047,6 +6074,10 @@ MonoBehaviour:
   skillType: 8
   buttonCharacter: C
   hintText: Cool node
+  learningCost: 0
+  buyingCost: 0
+  requirements:
+  - {fileID: 2077615862}
 --- !u!1 &1822435107
 GameObject:
   m_ObjectHideFlags: 0
@@ -6189,6 +6220,9 @@ MonoBehaviour:
   skillType: 5
   buttonCharacter: I
   hintText: Infiltrate
+  learningCost: 0
+  buyingCost: 0
+  requirements: []
 --- !u!1 &1892251363
 GameObject:
   m_ObjectHideFlags: 0
@@ -6640,6 +6674,9 @@ MonoBehaviour:
   skillType: 0
   buttonCharacter: D
   hintText: Dispatch job
+  learningCost: 0
+  buyingCost: 0
+  requirements: []
 --- !u!1 &1980602569
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,6 +7047,9 @@ MonoBehaviour:
   skillType: 1
   buttonCharacter: A
   hintText: Set node alarm
+  learningCost: 0
+  buyingCost: 0
+  requirements: []
 --- !u!1 &2077615860
 GameObject:
   m_ObjectHideFlags: 0
@@ -7052,6 +7092,9 @@ MonoBehaviour:
   skillType: 7
   buttonCharacter: C
   hintText: Over-clock node
+  learningCost: 0
+  buyingCost: 0
+  requirements: []
 --- !u!1 &2088608801
 GameObject:
   m_ObjectHideFlags: 0
