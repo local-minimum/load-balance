@@ -4434,7 +4434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   credits: 10
-  autoUpdateAmmount: 30
+  autoUpdateAmmount: 0
 --- !u!4 &1140305724
 Transform:
   m_ObjectHideFlags: 0
