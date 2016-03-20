@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 3647fd0850a809543b5482c7751d2009
+timeCreated: 1458301752
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: background
+    21300002: procs
+    21300004: probes
+    21300006: close
+    21300008: linker
+    21300010: skill
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: background
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 123
+        width: 476
+        height: 516
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 238, y: 219}
+        - {x: 230, y: 227}
+        - {x: 229, y: 227}
+        - {x: 211, y: 245}
+        - {x: 210, y: 245}
+        - {x: 197, y: 258}
+        - {x: -139, y: 258}
+        - {x: -177, y: 220}
+        - {x: -238, y: 220}
+        - {x: -238, y: -182}
+        - {x: -177, y: -182}
+        - {x: -175, y: -184}
+        - {x: -174, y: -184}
+        - {x: -167, y: -191}
+        - {x: -166, y: -191}
+        - {x: -158, y: -199}
+        - {x: -157, y: -199}
+        - {x: -150, y: -206}
+        - {x: -149, y: -206}
+        - {x: -142, y: -213}
+        - {x: -141, y: -213}
+        - {x: -136, y: -218}
+        - {x: -46, y: -218}
+        - {x: -45, y: -220}
+        - {x: -39, y: -226}
+        - {x: -39, y: -227}
+        - {x: -33, y: -233}
+        - {x: -33, y: -234}
+        - {x: -27, y: -240}
+        - {x: -27, y: -241}
+        - {x: -22, y: -246}
+        - {x: -22, y: -247}
+        - {x: -16, y: -253}
+        - {x: -16, y: -254}
+        - {x: -12, y: -258}
+        - {x: 196, y: -258}
+        - {x: 210, y: -244}
+        - {x: 211, y: -244}
+        - {x: 238, y: -217}
+    - name: procs
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 64
+        width: 146
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40, y: 18.5}
+        - {x: -49, y: 10.5}
+        - {x: -73, y: -13.5}
+        - {x: -73, y: -18.5}
+        - {x: 73, y: -18.5}
+        - {x: 73, y: 18.5}
+    - name: probes
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 64
+        width: 147
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.5, y: 18.5}
+        - {x: -73.5, y: -14.5}
+        - {x: -73.5, y: -18.5}
+        - {x: 73.5, y: -18.5}
+        - {x: 73.5, y: 18.5}
+    - name: close
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 64
+        width: 79
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.5, y: 18.5}
+        - {x: -39.5, y: -18.5}
+        - {x: 39.5, y: -18.5}
+        - {x: 39.5, y: -13.5}
+        - {x: 9.5, y: 18.5}
+    - name: linker
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 59
+        width: 6
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: skill
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 62
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 23.5}
+        - {x: -22, y: -23.5}
+        - {x: 19, y: -23.5}
+        - {x: 22, y: -20.5}
+        - {x: 22, y: 23.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
