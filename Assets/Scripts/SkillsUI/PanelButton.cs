@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public delegate void PanelSelect(RectTransform panel);
+public delegate void PanelSelect(CanvasGroup panel);
 
 public class PanelButton : MonoBehaviour {
 
 	[SerializeField] bool startSelected = false;
-	[SerializeField] RectTransform panel;
+	[SerializeField] CanvasGroup panel;
 
 	Button button;
 
@@ -29,10 +29,12 @@ public class PanelButton : MonoBehaviour {
 		OnPanelSelect -= HandlePanelSelect;
 	}
 
-	void HandlePanelSelect (RectTransform panel)
+	void HandlePanelSelect (CanvasGroup panel)
 	{
 		bool selected = panel == this.panel;
-		this.panel.gameObject.SetActive (selected);
+		this.panel.alpha = selected ? 1 : 0;
+		this.panel.interactable = selected;
+		this.panel.blocksRaycasts = selected;
 		button.interactable = !selected;
 	}
 

@@ -35,7 +35,7 @@ public class ProcSkill : AbstractSkill {
 		return false;	
 	}
 
-	public void Increase() {
+	public override void Increase() {
 		
 		if (_progress == SkillProgress.UnAvailable)
 			return;

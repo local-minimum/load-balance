@@ -40,4 +40,6 @@ public abstract class AbstractSkill : MonoBehaviour {
 		}
 
 	}
+
+	public abstract void Increase ();
 }

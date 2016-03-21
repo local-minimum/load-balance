@@ -2003,6 +2003,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 329637464}
+  - 225: {fileID: 329637465}
   m_Layer: 5
   m_Name: Probes
   m_TagString: Untagged
@@ -2031,6 +2032,17 @@ RectTransform:
   m_AnchoredPosition: {x: -238, y: 258}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &329637465
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 329637463}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &368801049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3949,13 +3961,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 950453358}
+  - 225: {fileID: 950453359}
   m_Layer: 5
   m_Name: Procs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &950453358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3981,6 +3994,17 @@ RectTransform:
   m_AnchoredPosition: {x: -238, y: 258}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &950453359
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 950453357}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &978289451
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,7 +4139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSelected: 1
-  panel: {fileID: 950453358}
+  panel: {fileID: 950453359}
 --- !u!1 &1042463696
 GameObject:
   m_ObjectHideFlags: 0
@@ -7197,7 +7221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSelected: 0
-  panel: {fileID: 329637464}
+  panel: {fileID: 329637465}
 --- !u!1 &1703646295
 GameObject:
   m_ObjectHideFlags: 0
