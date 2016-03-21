@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="159.0058mm"
+   height="56.976734mm"
+   viewBox="0 0 563.40637 201.88607"
+   id="svg4818"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="stack_placeholder.svg"
+   inkscape:export-filename="D:\martin\Documents\Unity Games\LoadBalance\Assets\Sprites\stack.png"
+   inkscape:export-xdpi="178.31841"
+   inkscape:export-ydpi="178.31841">
+  <defs
+     id="defs4820" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="323.15053"
+     inkscape:cy="86.635159"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5" />
+  <metadata
+     id="metadata4823">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(9.0824724,-227.0271)">
+    <path
+       style="fill:#cd87de;fill-opacity:0.49019608;fill-rule:evenodd;stroke:#892ca0;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 23.5838,342.10264 -13.1929,-17.60407 39.24987,-78.25493 177.93293,0 23.74942,41.13522 54.14405,0 19.3617,37.11971 -13.86521,17.60407"
+       id="path5366"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-filename="D:\martin\Documents\Unity Games\LoadBalance\Assets\Sprites\path5366.png"
+       inkscape:export-xdpi="178.31841"
+       inkscape:export-ydpi="178.31841" />
+    <g
+       transform="translate(-176.7063,-51.044988)"
+       id="g5513">
+      <circle
+         r="12.658321"
+         cy="435.21933"
+         cx="582.14288"
+         id="path5434"
+         style="fill:#81ffe5;fill-opacity:0.49019608;stroke:#892ca0;stroke-width:1;stroke-miterlimit:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98823529" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5436"
+         d="m 575.82943,435.21933 12.62691,0"
+         style="opacity:0.97000002;fill:none;fill-rule:evenodd;stroke:#892ca0;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.98823529" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#892ca0;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.98823529"
+         d="m 582.14288,441.53278 0,-12.62691"
+         id="path5438"
+         inkscape:connector-curvature="0" />
+    </g>
+    <circle
+       r="3.5511785"
+       cy="382.15405"
+       cx="372.83249"
+       id="circle5511"
+       style="fill:#81ffe5;fill-opacity:0.49019608;stroke:#892ca0;stroke-width:0.5;stroke-miterlimit:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98823529" />
+    <path
+       sodipodi:nodetypes="cccccc"
+       inkscape:connector-curvature="0"
+       id="path5518"
+       d="m 37.564491,410.22472 13.54555,-17.27305 -19.76695,-37.42995 114.144049,0 25.3617,37.11971 -13.86521,17.60407"
+       style="fill:#cd87de;fill-opacity:0.49019608;fill-rule:evenodd;stroke:#892ca0;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:#cd87de;fill-opacity:0.49019608;fill-rule:evenodd;stroke:#892ca0;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 193.4704,410.24774 13.54555,-17.27305 -25.32279,-37.42995 83.69989,0 25.3617,37.11971 -13.86521,17.60407"
+       id="path5520"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc" />
+    <circle
+       style="fill:#892ca0;fill-opacity:0.98823529;stroke:#81ffe5;stroke-width:2;stroke-miterlimit:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="circle5527"
+       cx="336.63797"
+       cy="383.65399"
+       r="12.633577" />
+  </g>
+</svg>

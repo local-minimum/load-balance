@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: c14dc6e4ae936a6479ae2b1bb501c75e
+timeCreated: 1458579536
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: stack_bg
+    21300002: stack_extension_1
+    21300004: stack_extension_2
+    21300006: stack_timer
+    21300008: stack_between_slots
+    21300010: stack_extend_stack
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: stack_bg
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 170
+        width: 1046
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 497, y: -97.5}
+        - {x: 501, y: -93.5}
+        - {x: 504, y: -89.5}
+        - {x: 504, y: -88.5}
+        - {x: 508, y: -84.5}
+        - {x: 508, y: -83.5}
+        - {x: 512, y: -79.5}
+        - {x: 515, y: -75.5}
+        - {x: 515, y: -74.5}
+        - {x: 523, y: -66.5}
+        - {x: 523, y: -54.5}
+        - {x: 521, y: -51.5}
+        - {x: 511, y: -30.5}
+        - {x: 509, y: -28.5}
+        - {x: 499, y: -7.5}
+        - {x: 497, y: -5.5}
+        - {x: 487, y: 15.5}
+        - {x: 483, y: 18.5}
+        - {x: -39, y: 18.5}
+        - {x: -40, y: 20.5}
+        - {x: -42, y: 25.5}
+        - {x: -44, y: 27.5}
+        - {x: -50, y: 39.5}
+        - {x: -52, y: 41.5}
+        - {x: -53, y: 44.5}
+        - {x: -55, y: 46.5}
+        - {x: -57, y: 51.5}
+        - {x: -59, y: 53.5}
+        - {x: -65, y: 65.5}
+        - {x: -67, y: 67.5}
+        - {x: -72, y: 77.5}
+        - {x: -74, y: 79.5}
+        - {x: -76, y: 84.5}
+        - {x: -78, y: 86.5}
+        - {x: -80, y: 91.5}
+        - {x: -82, y: 93.5}
+        - {x: -83, y: 96.5}
+        - {x: -85, y: 97.5}
+        - {x: -447, y: 97.5}
+        - {x: -479, y: 32.5}
+        - {x: -481, y: 30.5}
+        - {x: -523, y: -54.5}
+        - {x: -523, y: -66.5}
+        - {x: -520, y: -69.5}
+        - {x: -514, y: -77.5}
+        - {x: -511, y: -80.5}
+        - {x: -511, y: -81.5}
+        - {x: -502, y: -93.5}
+        - {x: -499, y: -96.5}
+        - {x: -499, y: -97.5}
+    - name: stack_extension_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 35
+        width: 286
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 93, y: 57}
+        - {x: -143, y: 57}
+        - {x: -143, y: 50}
+        - {x: -109, y: -19}
+        - {x: -133, y: -55}
+        - {x: -129, y: -57}
+        - {x: 119, y: -57}
+        - {x: 127, y: -53}
+        - {x: 143, y: -25}
+        - {x: 143, y: -14}
+    - name: stack_extension_2
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 35
+        width: 226
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -113, y: 57}
+        - {x: -113, y: 50}
+        - {x: -94, y: 8}
+        - {x: -89, y: -54}
+        - {x: -86, y: -57}
+        - {x: 89, y: -57}
+        - {x: 113, y: -33}
+        - {x: 113, y: -13}
+        - {x: 68, y: 57}
+    - name: stack_timer
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 62
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 27.5}
+        - {x: -27.5, y: 22.5}
+        - {x: -27.5, y: -17.5}
+        - {x: -24.5, y: -27.5}
+        - {x: 14.5, y: -27.5}
+        - {x: 27.5, y: -18.5}
+        - {x: 27.5, y: 23.5}
+        - {x: 24.5, y: 27.5}
+    - name: stack_between_slots
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 85
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: stack_extend_stack
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 62
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 26.5}
+        - {x: -26.5, y: 24.5}
+        - {x: -26.5, y: -23.5}
+        - {x: -20.5, y: -26.5}
+        - {x: 25.5, y: -26.5}
+        - {x: 26.5, y: -25.5}
+        - {x: 26.5, y: 26.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
