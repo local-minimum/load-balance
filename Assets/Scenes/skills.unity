@@ -4416,7 +4416,7 @@ GameObject:
   - 114: {fileID: 1140305723}
   - 114: {fileID: 1140305725}
   m_Layer: 0
-  m_Name: PlaceHolderPlayer
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9120,7 +9120,7 @@ GameObject:
   - 4: {fileID: 2088608803}
   - 114: {fileID: 2088608802}
   m_Layer: 0
-  m_Name: PlaceHolderSkillSystem
+  m_Name: SkillSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

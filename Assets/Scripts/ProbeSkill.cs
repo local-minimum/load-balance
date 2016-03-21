@@ -5,50 +5,11 @@ public enum ProbeSkills {Dispatch, Alarm, Survey, Scan, Map, Infiltrate, Hack, C
 
 public delegate void ProbeSkillChange(PlayerIdentity player, ProbeSkills skill, SkillProgress progres);
 
-public class ProbeSkill : MonoBehaviour {
+public class ProbeSkill : AbstractSkill {
 
 	public static event ProbeSkillChange OnProbeSkillChange;
 
 	public ProbeSkills skillType;
-
-	SkillProgress _progress = SkillProgress.UnAvailable;
-
-	public SkillProgress progress {
-		get {
-			return _progress;
-		}
-	}
-
-	public string buttonCharacter = "A";
-	public string hintText = "";
-
-	public int learningCost;
-	public int buyingCost;
-
-	public int actionCost {
-		get {
-			if (_progress == SkillProgress.Learned)
-				return buyingCost;
-			else
-				return learningCost;
-		}
-	}
-
-	[SerializeField] ProbeSkill[] requirements;
-
-	bool AllRequirementsMet {
-		get {
-			if (requirements == null || requirements.Length == 0) {
-				return true;
-			}
-			for (int i = 0; i < requirements.Length; i++) {
-				if (requirements [i]._progress != SkillProgress.Learned && requirements[i]._progress != SkillProgress.Bought)
-					return false;
-			}
-			return true;
-		}
-
-	}
 
 	void Awake() {
 

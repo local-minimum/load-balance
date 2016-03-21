@@ -5,32 +5,12 @@ public enum ProcSkills {Frag, Flip, Push, Mash, Rend, Zoom, Unknown};
 
 public delegate void ProcSkillChange(PlayerIdentity player, ProcSkills skill, SkillProgress progress);
 
-public class ProcSkill : MonoBehaviour {
+public class ProcSkill : AbstractSkill {
 
 	public ProcSkills skillType;
 
-	public string buttonCharacter = "A";
-	public string hintText = "";
-	public int learningCost;
-	public int buyingCost;
 
-	public int actionCost {
-		get {
-			if (_progress == SkillProgress.Learned)
-				return buyingCost;
-			else
-				return learningCost;
-		}
-	}
 
-	public ProcSkill[] requirements;
-	SkillProgress _progress = SkillProgress.UnAvailable;
-
-	public SkillProgress progress {
-		get {
-			return _progress;
-		}
-	}
 
 	public static event ProcSkillChange OnSkillChange;
 
@@ -65,22 +45,7 @@ public class ProcSkill : MonoBehaviour {
 			Buy ();
 		
 	}
-
-	bool AllRequirementsMet {
-		get {
-			if (requirements == null || requirements.Length == 0) {
-				return true;
-			}
-			for (int i = 0; i < requirements.Length; i++) {
-				if (requirements [i]._progress != SkillProgress.Learned && requirements[i]._progress != SkillProgress.Bought)
-					return false;
-			}
-			return true;
-		}
-
-	}
-		
-
+				
 	void Awake() {
 		
 		if (AllRequirementsMet)
