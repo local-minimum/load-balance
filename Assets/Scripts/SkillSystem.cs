@@ -32,14 +32,21 @@ public class SkillSystem : MonoBehaviour {
 	}
 		
 	public static ProcSkill getSkill(ProcSkills skill) {
+		if (!procSkills.ContainsKey (skill))
+			instance.Start ();
+		
 		if (procSkills.ContainsKey(skill))
 			return procSkills[skill];
 		return null;
 	}
 
 	public static ProbeSkill getSkill(ProbeSkills skill) {
-		if (probeSkills.ContainsKey(skill))
-			return probeSkills[skill];
+		if (!probeSkills.ContainsKey (skill))
+			instance.Start ();
+		
+		if (probeSkills.ContainsKey (skill))
+			return probeSkills [skill];
+
 		return null;
 	}
 		

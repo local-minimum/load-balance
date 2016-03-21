@@ -8,12 +8,14 @@ public class Player : MonoBehaviour {
 	public PlayerIdentity playerIdentity;
 	public static PlayerIdentity LocalPlayerIdentity;
 	public PlayerCredits credits;
+	public PlayerStack playerStack;
 
 	static Dictionary<PlayerIdentity, Player> _players = new Dictionary<PlayerIdentity, Player> ();
 
 	void Awake() {
 		//TODO: Do this properly
 		credits = GetComponent<PlayerCredits>();
+		playerStack = GetComponent<PlayerStack> ();
 		LocalPlayerIdentity = playerIdentity;
 		_players [playerIdentity] = this;
 	}
