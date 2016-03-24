@@ -427,6 +427,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11429782, guid: 2383a41f8da002742b360ab474f1ce26, type: 2}
+      propertyPath: slots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429782, guid: 2383a41f8da002742b360ab474f1ce26, type: 2}
+      propertyPath: expansionTimes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 420994, guid: 2383a41f8da002742b360ab474f1ce26, type: 2}
       propertyPath: m_LocalPosition.x
       value: 170.9
@@ -458,6 +466,22 @@ Prefab:
     - target: {fileID: 420994, guid: 2383a41f8da002742b360ab474f1ce26, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429782, guid: 2383a41f8da002742b360ab474f1ce26, type: 2}
+      propertyPath: slots.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429782, guid: 2383a41f8da002742b360ab474f1ce26, type: 2}
+      propertyPath: slots.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429782, guid: 2383a41f8da002742b360ab474f1ce26, type: 2}
+      propertyPath: slots.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429782, guid: 2383a41f8da002742b360ab474f1ce26, type: 2}
+      propertyPath: expansionTimes.Array.data[0]
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2383a41f8da002742b360ab474f1ce26, type: 2}
@@ -896,7 +920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af77a6998905eec44b67748c07c127e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extensionIndex: 0
   fieldAlpha:
     serializedVersion: 2
     m_Curve:
@@ -911,9 +934,9 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - time: 1
-      value: 0
-      inSlope: -6.879868
-      outSlope: -6.879868
+      value: 0.65000004
+      inSlope: -4.881054
+      outSlope: -4.881054
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -1010,6 +1033,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  canvasGroup: {fileID: 752817870}
+  updateFrequency: 0.07
+  timer: {fileID: 1404220683}
 --- !u!1001 &817787076
 Prefab:
   m_ObjectHideFlags: 0
@@ -1494,7 +1520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af77a6998905eec44b67748c07c127e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extensionIndex: 1
   fieldAlpha:
     serializedVersion: 2
     m_Curve:
@@ -1509,9 +1534,9 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - time: 1
-      value: 0
-      inSlope: -6.879868
-      outSlope: -6.879868
+      value: 0.65000004
+      inSlope: -4.881054
+      outSlope: -4.881054
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -1608,6 +1633,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  canvasGroup: {fileID: 1535662629}
+  updateFrequency: 0.07
+  timer: {fileID: 127357981}
 --- !u!1 &1723010629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1714,6 @@ GameObject:
   - 222: {fileID: 1763193396}
   - 114: {fileID: 1763193395}
   - 114: {fileID: 1763193394}
-  - 114: {fileID: 1763193397}
   m_Layer: 5
   m_Name: ExtendButton
   m_TagString: Untagged
@@ -1750,7 +1777,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1763193397}
+      - m_Target: {fileID: 2069224784}
         m_MethodName: BuyExtension
         m_Mode: 1
         m_Arguments:
@@ -1796,18 +1823,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1763193392}
---- !u!114 &1763193397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1763193392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be6f07c729f6e1042ba74747f61b3625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 1763193394}
 --- !u!1 &1779694908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1878,6 +1893,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2183,6 +2199,7 @@ GameObject:
   - 224: {fileID: 2069224781}
   - 222: {fileID: 2069224783}
   - 114: {fileID: 2069224782}
+  - 114: {fileID: 2069224784}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -2246,6 +2263,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2069224780}
+--- !u!114 &2069224784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2069224780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6f07c729f6e1042ba74747f61b3625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1763193394}
 --- !u!1 &2145492338
 GameObject:
   m_ObjectHideFlags: 0

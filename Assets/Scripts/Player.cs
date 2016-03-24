@@ -21,8 +21,16 @@ public class Player : MonoBehaviour {
 	}
 
 	public static Player GetPlayer(PlayerIdentity pi) {
-		if (_players.ContainsKey(pi))
-			return _players[pi];
+		if (_players.ContainsKey (pi))
+			return _players [pi];
+		else {
+			var players = GameObject.FindObjectsOfType<Player> ();
+			for (int i = 0; i < players.Length; i++) {
+				players [i].Awake ();
+			}
+			if (_players.ContainsKey(pi))
+				return _players[pi];
+		}
 		return null;
 	}
 }

@@ -1,9 +1,46 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+
+public enum StackEventType {Expanded, Expired};
+
+public delegate void StackEvent(int slot, StackEventType eventType);
 
 public class PlayerStack : MonoBehaviour {
 
+	public event StackEvent OnStackChange;
+
 	Player player;
+
+	[SerializeField] int[] slots;
+
+	[SerializeField] float[] expansionTimes;
+
+	[SerializeField] float stackExpansionDuration = 60;
+
+	float[] expansionTimeProgress;
+
+	bool monitoringExpansions = false;
+
+	[SerializeField]
+	float expansionMonitoringFrequency = 0.1f;
+		
+	public int currentCapacity {
+		get {
+			int capacity = 0;
+			float t = Time.timeSinceLevelLoad - stackExpansionDuration;
+			for (int i = 0; i < expansionTimes.Length; i++) {
+				if (expansionTimes[i] < 0 || t < expansionTimes[i])
+					capacity += slots [i];
+			}
+			return capacity;
+		}
+	}
+
+	public float GetDurationProgress(int slot) {
+		if (expansionTimeProgress == null)
+			return 0;
+		return expansionTimeProgress [slot];
+	}
 
 	// Use this for initialization
 	void Awake () {
@@ -23,7 +60,30 @@ public class PlayerStack : MonoBehaviour {
 	void HandleProbeSkill (PlayerIdentity player, ProbeSkills skill, SkillProgress progres)
 	{
 		if (skill == ProbeSkills.ExpandStack && progres == SkillProgress.Bought && player == this.player.playerIdentity) {
-			//TODO: Cause Extension
+
+			//Pushes all expiration times on to the right
+			float t = -1f;
+			for (int i = 0; i < expansionTimes.Length; i++) {
+				if (expansionTimes [i] < 0)
+					continue;
+
+				if (t < 0) {
+					expansionTimes [i] = Time.timeSinceLevelLoad;
+					t = expansionTimes [i];
+					if (OnStackChange != null)
+						OnStackChange (i, StackEventType.Expanded);
+				} else {
+					float t2 = expansionTimes [i];
+					expansionTimes [i] = t;
+					if (t != 0 && Time.timeSinceLevelLoad - stackExpansionDuration < t && OnStackChange != null)
+						OnStackChange (i, StackEventType.Expanded);
+					t = t2;
+				}
+
+			}
+
+			if (!monitoringExpansions)
+				StartCoroutine (expansionMonitor ());
 		}
 	}
 		
@@ -33,4 +93,39 @@ public class PlayerStack : MonoBehaviour {
 			//TODO: Start unit production
 		}
 	}
+
+	IEnumerator<WaitForSeconds> expansionMonitor() {
+		
+		monitoringExpansions = true;
+		expansionTimeProgress = new float[slots.Length];
+		Debug.Log ("Expansion monitor");
+		while (true) {
+			
+			float curTime = Time.timeSinceLevelLoad;
+			bool noExpansionActive = true;
+
+			for (int i = 0; i < expansionTimeProgress.Length; i++) {
+				
+				if (expansionTimes [i] < 0)
+					continue;
+				
+				bool wasActive = expansionTimeProgress [i] < 1f;
+				expansionTimeProgress [i] = Mathf.Clamp01 ((curTime - expansionTimes [i]) / stackExpansionDuration);
+
+				if (wasActive && expansionTimeProgress [i] == 1f && OnStackChange != null) {
+					OnStackChange (i, StackEventType.Expired);
+				} else if (expansionTimeProgress [i] < 1f) {
+					noExpansionActive = false;
+				}					
+			}
+
+			if (noExpansionActive)
+				break;
+			
+			yield return new WaitForSeconds (expansionMonitoringFrequency);
+		}
+
+		monitoringExpansions = false;
+	}
+
 }
