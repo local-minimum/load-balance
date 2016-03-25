@@ -9,13 +9,16 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="177.06563mm"
+   width="174.06563mm"
    height="39.71653mm"
-   viewBox="0 0 627.39789 140.72786"
+   viewBox="0 0 616.76796 140.72786"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="status_placeholder.svg">
+   sodipodi:docname="status_placeholder.svg"
+   inkscape:export-filename="D:\martin\Documents\Unity Games\LoadBalance\Assets\Sprites\status.png"
+   inkscape:export-xdpi="177.58826"
+   inkscape:export-ydpi="177.58826">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -26,14 +29,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="368.81458"
+     inkscape:cx="365.27127"
      inkscape:cy="249.71923"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      fit-margin-top="5"
-     fit-margin-left="5"
-     fit-margin-right="5"
+     fit-margin-left="4"
+     fit-margin-right="3"
      fit-margin-bottom="5"
      inkscape:window-width="1680"
      inkscape:window-height="987"
@@ -56,7 +59,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-97.317902,-48.562025)">
+     transform="translate(-100.86121,-48.562025)">
     <path
        style="fill:#cd87de;fill-opacity:0.49019608;fill-rule:evenodd;stroke:#892ca0;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 129.96932,67.206676 -13.1929,17.60407 17.10701,36.258754 551.96926,0 19.3617,-36.258754 -13.86521,-17.60407"
