@@ -16,16 +16,26 @@ public class Player : MonoBehaviour {
 	static Dictionary<PlayerIdentity, Player> _players = new Dictionary<PlayerIdentity, Player> ();
 
 	void Awake() {
-		//TODO: Do this properly
+
 		credits = GetComponent<PlayerCredits>();
 		playerStack = GetComponent<PlayerStack> ();
+
+		//TODO: Do this properly
 		LocalPlayerIdentity = playerIdentity;
-		_players [playerIdentity] = this;
-		if (activeJobs == null) {
-			var GO = new GameObject ("Active Jobs");
-			activeJobs = GO.transform;
-			activeJobs.SetParent (transform);
+
+		if (_players.ContainsKey (playerIdentity) && _players [playerIdentity] != this) {
+			Destroy (gameObject);
+		} else {
+			_players [playerIdentity] = this;
+
+			if (activeJobs == null) {
+				var GO = new GameObject ("Active Jobs");
+				activeJobs = GO.transform;
+				activeJobs.SetParent (transform);
+			}
+
 		}
+
 	}
 
 	public static Player GetPlayer(PlayerIdentity pi) {
