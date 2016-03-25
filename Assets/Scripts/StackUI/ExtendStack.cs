@@ -13,6 +13,7 @@ public class ExtendStack : MonoBehaviour {
 
 	PlayerStack playerStack;
 	StackExtension[] stackExtensions;
+	StackSlot[] stackSlots;
 
 	void Awake() {
 		stackExtensions = GetComponentsInChildren<StackExtension> ();
@@ -21,20 +22,34 @@ public class ExtendStack : MonoBehaviour {
 
 		for (int i = 0; i < stackExtensions.Length; i++)
 			stackExtensions [i].SetDisabled ();
+
+		stackSlots = GetComponentsInChildren<StackSlot> ();	
+		for (int i = 0; i < stackSlots.Length; i++)
+			stackSlots [i].NoJob ();	
+		
 	}
 
 	void OnEnable() {
 		ProbeSkill.OnProbeSkillChange += HandleProbeSkillChange;
 		PlayerCredits.OnPlayerCreditsChange += HandlePlayerCredits;
 		playerStack.OnStackChange += HandlePlayerStackEvent;
+		playerStack.OnJobEvent += HandleJobEvent;
 	}
-				
+
 	void OnDisable() {
 		ProbeSkill.OnProbeSkillChange -= HandleProbeSkillChange;
 		PlayerCredits.OnPlayerCreditsChange -= HandlePlayerCredits;
 		playerStack.OnStackChange -= HandlePlayerStackEvent;
+		playerStack.OnJobEvent -= HandleJobEvent;
 	}
 
+	void HandleJobEvent (int slot, ProcJob job)
+	{
+		//Debug.Log (slot + ": " + job.jobType + " [" + job.status + "]");
+		if (slot >= 0 && slot < stackSlots.Length && job.status == JobStatus.UnderConstruction)
+			stackSlots [slot].ShowJob (job);
+	}
+		
 	void HandlePlayerStackEvent (int slot, StackEventType eventType)
 	{
 		if (eventType == StackEventType.Expanded) {

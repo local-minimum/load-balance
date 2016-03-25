@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e12f81a08d90546ba99694f8a06e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: 050000000200000001000000
+  expansionSlots: 050000000200000001000000
   expansionTimes:
   - -1
   - 0

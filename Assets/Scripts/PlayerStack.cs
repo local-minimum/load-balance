@@ -4,20 +4,24 @@ using System.Collections.Generic;
 public enum StackEventType {Expanded, Expired};
 
 public delegate void StackEvent(int slot, StackEventType eventType);
+public delegate void JobEvent(int slot, ProcJob job);
 
 public class PlayerStack : MonoBehaviour {
 
 	public event StackEvent OnStackChange;
+	public event JobEvent OnJobEvent;
 
 	Player player;
 
-	[SerializeField] int[] slots;
+	List<ProcJob> queue = new List<ProcJob>();
 
-	[SerializeField] float[] expansionTimes;
+	int[] expansionSlots = new int[3] {5, 2, 1};
+
+	float[] expansionTimes = new float[3] {-1, 0, 0};
 
 	float stackExpansionDuration = -1;
 
-	float[] expansionTimeProgress;
+	float[] expansionTimeProgress = new float[3] {0, 0, 0};
 
 	bool monitoringExpansions = false;
 
@@ -27,12 +31,23 @@ public class PlayerStack : MonoBehaviour {
 	public int currentCapacity {
 		get {
 			int capacity = 0;
-			float t = Time.timeSinceLevelLoad - stackExpansionDuration;
-			for (int i = 0; i < expansionTimes.Length; i++) {
-				if (expansionTimes[i] < 0 || t < expansionTimes[i])
-					capacity += slots [i];
+			for (int i = 0; i < expansionTimeProgress.Length; i++) {
+				if (expansionTimes[i] < 0 || expansionTimeProgress[i] < 1)
+					capacity += expansionSlots [i];
 			}
 			return capacity;
+		}
+	}
+
+	public int currentOccupation {
+		get {
+			return queue.Count;
+		}
+	}
+
+	public bool hasEmptySlots {
+		get {
+			return currentOccupation < currentCapacity;
 		}
 	}
 
@@ -93,10 +108,20 @@ public class PlayerStack : MonoBehaviour {
 		}
 	}
 		
-	void HandleProcSkill (PlayerIdentity player, ProcSkills skill, SkillProgress progress)
+	void HandleProcSkill (PlayerIdentity playerIdentity, ProcSkills skill, SkillProgress progress)
 	{
-		if (player == this.player.playerIdentity && progress == SkillProgress.Bought) {
-			//TODO: Start unit production
+		if (playerIdentity == player.playerIdentity && progress == SkillProgress.Bought) {
+			if (hasEmptySlots) {
+				var job = player.activeJobs.gameObject.AddComponent<ProcJob> ();
+				job.jobType = skill;
+				job.Construct (SkillSystem.getSkill (skill).productionTime * player.productionSpeedFactor);
+				queue.Add (job);
+				if (OnJobEvent != null)
+					OnJobEvent (queue.IndexOf (job), job);
+			} else {
+				if (OnJobEvent != null)
+					OnJobEvent (-1, null);
+			}
 		}
 	}
 
@@ -108,8 +133,7 @@ public class PlayerStack : MonoBehaviour {
 	IEnumerator<WaitForSeconds> expansionMonitor() {
 		
 		monitoringExpansions = true;
-		expansionTimeProgress = new float[slots.Length];
-		Debug.Log ("Expansion monitor");
+
 		while (true) {
 			
 			float curTime = Time.timeSinceLevelLoad;
@@ -123,11 +147,15 @@ public class PlayerStack : MonoBehaviour {
 				bool wasActive = expansionTimeProgress [i] < 1f;
 				expansionTimeProgress [i] = Mathf.Clamp01 ((curTime - expansionTimes [i]) / stackExpansionDuration);
 
-				if (wasActive && expansionTimeProgress [i] == 1f && OnStackChange != null) {
-					OnStackChange (i, StackEventType.Expired);
+				if (wasActive && expansionTimeProgress [i] == 1f) {
+					TrimQueue ();
+					if (OnStackChange != null) {
+						OnStackChange (i, StackEventType.Expired);
+					}
 				} else if (expansionTimeProgress [i] < 1f) {
 					noExpansionActive = false;
-				}					
+				}
+
 			}
 
 			if (noExpansionActive)
@@ -137,6 +165,16 @@ public class PlayerStack : MonoBehaviour {
 		}
 
 		monitoringExpansions = false;
+	}
+
+	public void TrimQueue() {
+		var capacity = currentCapacity;
+		Debug.Log ("Trim queue: " + queue.Count + "/" + capacity);
+		while (queue.Count > capacity) {
+			var job = queue [queue.Count - 1];
+			queue.Remove (job);
+			job.SetExpired ();
+		}
 	}
 
 }

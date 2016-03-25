@@ -9,6 +9,9 @@ public class Player : MonoBehaviour {
 	public static PlayerIdentity LocalPlayerIdentity;
 	public PlayerCredits credits;
 	public PlayerStack playerStack;
+	[HideInInspector] public Transform activeJobs;
+
+	[HideInInspector] public float productionSpeedFactor = 1f;
 
 	static Dictionary<PlayerIdentity, Player> _players = new Dictionary<PlayerIdentity, Player> ();
 
@@ -18,6 +21,11 @@ public class Player : MonoBehaviour {
 		playerStack = GetComponent<PlayerStack> ();
 		LocalPlayerIdentity = playerIdentity;
 		_players [playerIdentity] = this;
+		if (activeJobs == null) {
+			var GO = new GameObject ("Active Jobs");
+			activeJobs = GO.transform;
+			activeJobs.SetParent (transform);
+		}
 	}
 
 	public static Player GetPlayer(PlayerIdentity pi) {

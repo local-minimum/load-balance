@@ -543,7 +543,8 @@ MonoBehaviour:
   buyingCost: 1070
   duration: -1
   requirements: []
-  skillType: 3
+  skillType: 5
+  productionTime: 10
 --- !u!114 &11429612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -581,7 +582,8 @@ MonoBehaviour:
   duration: -1
   requirements:
   - {fileID: 11484658}
-  skillType: 1
+  skillType: 3
+  productionTime: 15
 --- !u!114 &11436292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -678,13 +680,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af0630e5a927c244bac498cfd8c31da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonCharacter: M
+  buttonCharacter: R
   hintText: Rend
   learningCost: 10000
   buyingCost: 10000
   duration: -1
   requirements: []
-  skillType: 2
+  skillType: 4
+  productionTime: 5
 --- !u!114 &11482762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -721,6 +724,7 @@ MonoBehaviour:
   duration: -1
   requirements: []
   skillType: 0
+  productionTime: 10
 --- !u!114 &11488916
 MonoBehaviour:
   m_ObjectHideFlags: 1
