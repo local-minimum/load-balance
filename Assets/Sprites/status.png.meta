@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 09c461bda58dc6b4bb2a2d0e6f532cc8
+timeCreated: 1458919121
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: status_bg
+    21300002: status_player
+    21300004: status_leader
+    21300006: status_progress
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: status_bg
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 131
+        width: 1169
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 569.5, y: -16}
+        - {x: 575.5, y: -3}
+        - {x: 577.5, y: -1}
+        - {x: 583.5, y: 12}
+        - {x: 584.5, y: 14}
+        - {x: 584.5, y: 24}
+        - {x: 578.5, y: 31}
+        - {x: 578.5, y: 32}
+        - {x: 574.5, y: 36}
+        - {x: 574.5, y: 37}
+        - {x: 567.5, y: 45}
+        - {x: 567.5, y: 46}
+        - {x: 563.5, y: 50}
+        - {x: 563.5, y: 51}
+        - {x: 559.5, y: 55}
+        - {x: 559.5, y: 56}
+        - {x: -559.5, y: 56}
+        - {x: -561.5, y: 54}
+        - {x: -564.5, y: 50}
+        - {x: -564.5, y: 49}
+        - {x: -567.5, y: 46}
+        - {x: -567.5, y: 45}
+        - {x: -570.5, y: 42}
+        - {x: -570.5, y: 41}
+        - {x: -573.5, y: 38}
+        - {x: -573.5, y: 37}
+        - {x: -576.5, y: 34}
+        - {x: -576.5, y: 33}
+        - {x: -579.5, y: 30}
+        - {x: -579.5, y: 29}
+        - {x: -584.5, y: 23}
+        - {x: -584.5, y: 15}
+        - {x: -579.5, y: 6}
+        - {x: -579.5, y: 4}
+        - {x: -571.5, y: -11}
+        - {x: -571.5, y: -13}
+        - {x: -563.5, y: -28}
+        - {x: -563.5, y: -30}
+        - {x: -550.5, y: -56}
+        - {x: 547.5, y: -56}
+        - {x: 559.5, y: -33}
+        - {x: 561.5, y: -31}
+        - {x: 567.5, y: -18}
+    - name: status_player
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 35
+        width: 93
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.5, y: 34}
+        - {x: -43.5, y: 18}
+        - {x: -46.5, y: -10}
+        - {x: -46.5, y: -34}
+        - {x: 40.5, y: -34}
+        - {x: 43.5, y: -31}
+        - {x: 46.5, y: 5}
+        - {x: 46.5, y: 34}
+    - name: status_leader
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 68
+        width: 79
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: status_progress
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 39
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 29.5}
+        - {x: -22, y: 14.5}
+        - {x: -22, y: -29.5}
+        - {x: 17, y: -29.5}
+        - {x: 22, y: -12.5}
+        - {x: 22, y: 29.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

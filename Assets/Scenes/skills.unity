@@ -1525,6 +1525,7 @@ GameObject:
   - 4: {fileID: 254370457}
   - 114: {fileID: 254370456}
   - 114: {fileID: 254370455}
+  - 114: {fileID: 254370458}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1576,6 +1577,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &254370458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 254370454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc60c299c5254e64ab60e3b75072ba6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  singletonType: 1
 --- !u!1 &275706008
 GameObject:
   m_ObjectHideFlags: 0
@@ -3231,7 +3244,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -24}
+  m_AnchoredPosition: {x: 0, y: -70}
   m_SizeDelta: {x: 476, y: 516}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &618418852

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public enum SingletonType {MainCamera};
+public enum SingletonType {MainCamera, EventSystem};
 
 public class SingletonByType : MonoBehaviour {
 
