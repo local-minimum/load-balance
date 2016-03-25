@@ -501,12 +501,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eeaf90a8ca2945ba04d23d8bc2604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 5
   buttonCharacter: I
   hintText: Infiltrate
   learningCost: 9200
   buyingCost: 9200
+  duration: -1
   requirements: []
+  skillType: 5
 --- !u!114 &11418376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -518,12 +519,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eeaf90a8ca2945ba04d23d8bc2604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 2
   buttonCharacter: S
   hintText: Quick job survey
   learningCost: 412
   buyingCost: 103
+  duration: -1
   requirements: []
+  skillType: 2
 --- !u!114 &11424750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -535,12 +537,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af0630e5a927c244bac498cfd8c31da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 3
   buttonCharacter: Z
   hintText: Zoom
   learningCost: 1070
   buyingCost: 1070
+  duration: -1
   requirements: []
+  skillType: 3
 --- !u!114 &11429612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -552,13 +555,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eeaf90a8ca2945ba04d23d8bc2604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 3
   buttonCharacter: S
   hintText: Job scan
   learningCost: 9200
   buyingCost: 9200
+  duration: -1
   requirements:
   - {fileID: 11418376}
+  skillType: 3
 --- !u!114 &11430342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -570,13 +574,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af0630e5a927c244bac498cfd8c31da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 1
   buttonCharacter: M
   hintText: Mash
   learningCost: 10000
   buyingCost: 10000
+  duration: -1
   requirements:
   - {fileID: 11484658}
+  skillType: 1
 --- !u!114 &11436292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -588,13 +593,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eeaf90a8ca2945ba04d23d8bc2604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 6
   buttonCharacter: H
   hintText: Hack
   learningCost: 208000
   buyingCost: 208000
+  duration: -1
   requirements:
   - {fileID: 11404828}
+  skillType: 6
 --- !u!114 &11455564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -606,13 +612,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eeaf90a8ca2945ba04d23d8bc2604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 8
   buttonCharacter: C
   hintText: Cool node
   learningCost: 208000
   buyingCost: 52000
+  duration: -1
   requirements:
   - {fileID: 11488916}
+  skillType: 8
 --- !u!114 &11458954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -635,12 +642,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eeaf90a8ca2945ba04d23d8bc2604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 0
   buttonCharacter: D
   hintText: Dispatch job
   learningCost: 412
   buyingCost: 206
+  duration: -1
   requirements: []
+  skillType: 0
 --- !u!114 &11466148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -652,12 +660,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eeaf90a8ca2945ba04d23d8bc2604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 9
   buttonCharacter: E
   hintText: Expand stack
   learningCost: 2000
   buyingCost: 500
+  duration: 30
   requirements: []
+  skillType: 9
 --- !u!114 &11472844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -669,12 +678,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af0630e5a927c244bac498cfd8c31da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 2
   buttonCharacter: M
   hintText: Rend
   learningCost: 10000
   buyingCost: 10000
+  duration: -1
   requirements: []
+  skillType: 2
 --- !u!114 &11482762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -686,12 +696,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eeaf90a8ca2945ba04d23d8bc2604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 1
   buttonCharacter: A
   hintText: Set node alarm
   learningCost: 412
   buyingCost: 206
+  duration: -1
   requirements: []
+  skillType: 1
 --- !u!114 &11484658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -703,12 +714,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af0630e5a927c244bac498cfd8c31da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 0
   buttonCharacter: F
   hintText: Fragment
   learningCost: 410
   buyingCost: 410
+  duration: -1
   requirements: []
+  skillType: 0
 --- !u!114 &11488916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -720,12 +732,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eeaf90a8ca2945ba04d23d8bc2604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 7
   buttonCharacter: C
   hintText: Over-clock node
   learningCost: 9200
   buyingCost: 9200
+  duration: -1
   requirements: []
+  skillType: 7
 --- !u!114 &11491006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -737,13 +750,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eeaf90a8ca2945ba04d23d8bc2604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 4
   buttonCharacter: M
   hintText: Complete job map
   learningCost: 208000
   buyingCost: 104000
+  duration: -1
   requirements:
   - {fileID: 11429612}
+  skillType: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

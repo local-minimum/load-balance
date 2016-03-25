@@ -64,5 +64,6 @@ public class StackExtension : MonoBehaviour {
 		timerColor.a = a;
 		timer.color = timerColor;
 		monitoring = false;
+		Debug.Log ("Extension UI done!");
 	}
 }

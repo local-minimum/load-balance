@@ -7,6 +7,7 @@ public abstract class AbstractSkill : MonoBehaviour {
 	public string hintText = "";
 	public int learningCost;
 	public int buyingCost;
+	public float duration = -1;
 
 	protected SkillProgress _progress = SkillProgress.UnAvailable;
 

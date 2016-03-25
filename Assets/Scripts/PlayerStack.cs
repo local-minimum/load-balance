@@ -15,7 +15,7 @@ public class PlayerStack : MonoBehaviour {
 
 	[SerializeField] float[] expansionTimes;
 
-	[SerializeField] float stackExpansionDuration = 60;
+	float stackExpansionDuration = -1;
 
 	float[] expansionTimeProgress;
 
@@ -61,6 +61,8 @@ public class PlayerStack : MonoBehaviour {
 	{
 		if (skill == ProbeSkills.ExpandStack && progres == SkillProgress.Bought && player == this.player.playerIdentity) {
 
+			stackExpansionDuration = SkillSystem.getSkill (skill).duration;
+
 			//Pushes all expiration times on to the right
 			float t = -1f;
 			for (int i = 0; i < expansionTimes.Length; i++) {
@@ -68,15 +70,19 @@ public class PlayerStack : MonoBehaviour {
 					continue;
 
 				if (t < 0) {
-					expansionTimes [i] = Time.timeSinceLevelLoad;
 					t = expansionTimes [i];
-					if (OnStackChange != null)
+					expansionTimes [i] = Time.timeSinceLevelLoad;
+					if (OnStackChange != null) {
+						ForceZeroProgress (i);
 						OnStackChange (i, StackEventType.Expanded);
+					}
 				} else {
 					float t2 = expansionTimes [i];
 					expansionTimes [i] = t;
-					if (t != 0 && Time.timeSinceLevelLoad - stackExpansionDuration < t && OnStackChange != null)
+					if (t != 0 && Time.timeSinceLevelLoad - stackExpansionDuration < t && OnStackChange != null) {
+						ForceZeroProgress (i);
 						OnStackChange (i, StackEventType.Expanded);
+					}
 					t = t2;
 				}
 
@@ -92,6 +98,11 @@ public class PlayerStack : MonoBehaviour {
 		if (player == this.player.playerIdentity && progress == SkillProgress.Bought) {
 			//TODO: Start unit production
 		}
+	}
+
+	void ForceZeroProgress(int slot) {
+		if (expansionTimeProgress != null && expansionTimeProgress.Length > slot)
+			expansionTimeProgress [slot] = 0;
 	}
 
 	IEnumerator<WaitForSeconds> expansionMonitor() {
