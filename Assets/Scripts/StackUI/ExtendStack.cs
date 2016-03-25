@@ -38,15 +38,15 @@ public class ExtendStack : MonoBehaviour {
 	void HandlePlayerStackEvent (int slot, StackEventType eventType)
 	{
 		if (eventType == StackEventType.Expanded) {
-			Debug.Log ("Slot " + slot + " active");
+			// Debug.Log ("Slot " + slot + " active");
 			stackExtensions [slot - 1].SetActiveMonitor (playerStack, slot);
 		}
 	}
 
-	void HandleProbeSkillChange (PlayerIdentity player, ProbeSkills skill, SkillProgress progres)
+	void HandleProbeSkillChange (PlayerIdentity player, ProbeSkills skill, SkillProgress progress)
 	{
 		if (player == Player.LocalPlayerIdentity && skill == this.skill.skillType) {
-			hasSkill = progres == SkillProgress.Learned || progres == SkillProgress.Bought;
+			hasSkill = progress == SkillProgress.Learned || progress == SkillProgress.Bought;
 			button.interactable = hasSkill && hasCredits;
 		}
 	}

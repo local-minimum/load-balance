@@ -9,8 +9,7 @@ public class ProcSkill : AbstractSkill {
 
 	public ProcSkills skillType;
 
-
-
+	public float productionTime = -1;
 
 	public static event ProcSkillChange OnSkillChange;
 
