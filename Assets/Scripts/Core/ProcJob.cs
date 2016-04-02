@@ -11,6 +11,10 @@ public class ProcJob : MonoBehaviour {
 	public ProcSkills jobType;
 	public JobStatus status;
 	public float progress = 0;
+	public int frame = 0;
+
+	ComputationNode node;
+
 	float statusStart;
 	float statusEnd;
 	float statusDuration;
@@ -48,6 +52,10 @@ public class ProcJob : MonoBehaviour {
 		if (OnStatusChange != null)
 			OnStatusChange (this, status);
 		Destroy (this, 1f);
+	}
+
+	public void Work() {
+
 	}
 		
 }

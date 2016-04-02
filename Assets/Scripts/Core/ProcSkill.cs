@@ -10,6 +10,7 @@ public class ProcSkill : AbstractSkill {
 	public ProcSkills skillType;
 
 	public float productionTime = -1;
+	public int patternWindowSize = 4;
 
 	public static event ProcSkillChange OnSkillChange;
 
