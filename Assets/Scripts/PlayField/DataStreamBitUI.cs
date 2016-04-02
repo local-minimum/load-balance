@@ -30,7 +30,7 @@ public class DataStreamBitUI : MonoBehaviour {
 				textField.enabled = true;
 			progress = (Time.timeSinceLevelLoad - startTime) / duration;
 			var basePos = Vector3.Lerp(source.position, target.position, progress);
-			transform.position = basePos + Vector3.up * Mathf.Sin(progress * sineFrequency * 2f * Mathf.PI) * sineAmplitude;
+			transform.position = basePos + Vector3.up * Mathf.Sin(progress * sineFrequency * 2f * Mathf.PI) * sineAmplitude * transform.lossyScale.y;
 			yield return new WaitForSeconds(updateFreq);
 
 		} while (progress < 1);
