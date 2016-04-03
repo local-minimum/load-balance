@@ -114,6 +114,7 @@ public class PlayerStack : MonoBehaviour {
 			if (hasEmptySlots) {
 				var job = player.activeJobs.gameObject.AddComponent<ProcJob> ();
 				job.jobType = skill;
+				job.playerId = player.playerIdentity;
 				job.Construct (SkillSystem.getSkill (skill).productionTime * player.productionSpeedFactor);
 				queue.Add (job);
 				if (OnJobEvent != null)
@@ -177,4 +178,15 @@ public class PlayerStack : MonoBehaviour {
 		}
 	}
 
+	public bool IsDeployable(int slot) {
+		if (slot > 0 && slot < queue.Count)
+			return queue [slot].status == JobStatus.Deployable;
+		return false;
+	}
+
+	public ProcJob GetSlot(int slot) {
+		if (slot > 0 && slot < queue.Count)
+			return queue [slot];
+		return null;
+	}
 }

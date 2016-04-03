@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 
+public delegate void AwardWorkDone(ProcJob job, int award);
+public delegate void ConsiderDeployment(ProcJob job, ComputationNode node);
+
 public class ComputationNode : MonoBehaviour {
+
+	public static AwardWorkDone OnAwardWorkDone;
+	public static ConsiderDeployment OnConsiderDeployment;
 
 	[SerializeField, Range(3, 50)] int cacheSize;
 
-	[SerializeField, Range(9, 99)] int maxPriority = 42;
+	[Range(9, 99)] public int maxPriority = 42;
 
 	DataStream stream;
 
@@ -21,6 +27,26 @@ public class ComputationNode : MonoBehaviour {
 	static System.Random _rnd;
 
 	[SerializeField] Dictionary<int, List<ProcJob>> jobs = new Dictionary<int, List<ProcJob>>();
+
+	static ComputationNode _focusNode;
+
+	public static void SetFocus(ComputationNode node) {
+		Debug.Log ("Focus " + node); 
+		_focusNode = node;
+	}
+
+	public static void UnsetFocus(ComputationNode node) {
+		if (_focusNode == node) {
+			Debug.Log ("Unfocus " + node);
+			_focusNode = null;
+		}
+	}
+
+	bool isFocused {
+		get {
+			return _focusNode == this;
+		}
+	}
 
 	void Awake() {
 		stream = GetComponentInChildren<DataStream> ();
@@ -57,12 +83,20 @@ public class ComputationNode : MonoBehaviour {
 					if (job == null || job.status == JobStatus.Expired) {
 						jobs [i].Remove (job);
 					} else {
-						job.Work ();
+						var cost = job.Work ();
+						if (cost > 0) {
+							Award (job, cost);
+						}
 					}
 				}
 			}
 		}
 
+	}
+
+	void Award(ProcJob job, int value) {
+		if (OnAwardWorkDone != null)
+			OnAwardWorkDone (job, value);
 	}
 
 	static T[] Shuffle<T>(IEnumerable<T> data) {
@@ -85,13 +119,42 @@ public class ComputationNode : MonoBehaviour {
 			System.Array.Copy (cache, newCache, cache.Length);
 			cache = newCache;
 		}
+
+		if (isFocused)
+			HandleInputs ();
+	}
+		
+	void HandleInputs() {
+		if (!Input.anyKeyDown)
+			return;
+
+		var slot = -1;
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+			slot = 0;
+		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
+			slot = 1;
+		} else if (Input.GetKeyDown (KeyCode.Alpha3)) {
+			slot = 2;
+		} else if (Input.GetKeyDown (KeyCode.Alpha4)) {
+			slot = 3;
+		} else if (Input.GetKeyDown (KeyCode.Alpha5)) {
+			slot = 4;
+		}
+
+		var stack = Player.GetPlayer (Player.LocalPlayerIdentity).playerStack;
+
+		if (stack.IsDeployable (slot)) {
+			var job = stack.GetSlot (slot);
+			if (OnConsiderDeployment != null)
+				OnConsiderDeployment (job, this);
+		}
 	}
 
 	public string[] GetCachedFrame(int size, int frame) {
 
 		var visibleIndex = (index - delay);
 
-		if (frame >= size) {
+		if (frame >= size || visibleIndex % size != frame) {
 			
 			return new string[0];
 
@@ -112,6 +175,19 @@ public class ComputationNode : MonoBehaviour {
 			
 			return new string[0];
 
+		}
+	}
+
+	public void SetCachedFrame(string[] patch) {
+		var endIndex = (index - delay);
+		var startIndex = endIndex - patch.Length;
+
+		if (startIndex >= 0) {
+			System.Array.Copy (patch, 0, cache, startIndex, patch.Length);
+		} else {
+			int partialLength = endIndex + 1; 
+			System.Array.Copy (patch, patch.Length - partialLength, cache, 0, partialLength);
+			System.Array.Copy (patch, 0, cache, startIndex % cache.Length, patch.Length - partialLength);
 		}
 	}
 

@@ -41,6 +41,19 @@ public class PlayerCredits : MonoBehaviour {
 		player = GetComponent<Player> ();
 	}
 
+	void OnEnable() {
+		ComputationNode.OnAwardWorkDone += HandleWorkAward;
+	}
+
+	void OnDisable() {
+		ComputationNode.OnAwardWorkDone -= HandleWorkAward;
+	}
+
+	void HandleWorkAward (ProcJob job, int award)
+	{
+		AddCredits (job.playerId, award);
+	}
+
 	#if UNITY_EDITOR
 	[SerializeField, Range(0, 1000)] int autoUpdateAmmount;
 

@@ -12,6 +12,7 @@ public class ProcJob : MonoBehaviour {
 	public JobStatus status;
 	public float progress = 0;
 	public int frame = 0;
+	public PlayerIdentity playerId;
 
 	ComputationNode node;
 
@@ -54,7 +55,32 @@ public class ProcJob : MonoBehaviour {
 		Destroy (this, 1f);
 	}
 
-	public void Work() {
+	public void Deploy(ComputationNode node, int priority, float duration) {
+		this.node = node;
+		node.AddJob (this, priority);
+		statusStart = Time.timeSinceLevelLoad;
+		statusEnd = statusStart + duration;
+		status = JobStatus.Deployed;	
+		if (OnStatusChange != null)
+			OnStatusChange (this, status);
+	}
+
+	public int Work() {
+		progress = Mathf.Clamp01((Time.timeSinceLevelLoad - statusStart) / (statusEnd - statusStart));
+		if (progress == 1) {
+			SetExpired ();
+		} else {
+			var windowSize = SkillSystem.getSkill (this.jobType).patternWindowSize;
+			var data = node.GetCachedFrame (windowSize, frame);
+			if (data.Length == windowSize) {
+				if (SkillSystem.patternMatches (jobType, data)) {
+					node.SetCachedFrame (SkillSystem.processedData (jobType, data));
+					return SkillSystem.getSkill (jobType).workCost;
+				}
+
+			}
+		}
+		return 0;
 
 	}
 		

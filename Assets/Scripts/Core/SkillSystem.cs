@@ -77,4 +77,21 @@ public class SkillSystem : MonoBehaviour {
 			probeSkills [skill.skillType] = skill;
 	}
 
+	public static bool patternMatches(ProcSkills skill, string[] data) {
+		//TODO: Add patterns
+		return false;
+	}
+
+	public static string[] processedData(ProcSkills skill, string[] data) {
+		//TODO: Add modifications
+		return data;
+	}
+
+	public static int calculateDeploymentCost(ProcSkills skill, int priority, float duration) {
+		//TODO: Add modifiers for various jobs
+		float modifier = 1;
+
+		return Mathf.RoundToInt(modifier * (1f + Mathf.Log(priority)) * (1 + Mathf.Log10(duration / 60f)));
+	}
+
 }

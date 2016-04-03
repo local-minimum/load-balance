@@ -13,6 +13,7 @@ public class ProcSkill : AbstractSkill {
 	public int patternWindowSize = 4;
 
 	public static event ProcSkillChange OnSkillChange;
+	public int workCost = 10;
 
 	bool Learn() {
 		PlayerCredits purse = Player.GetPlayer(Player.LocalPlayerIdentity).credits;
