@@ -125,8 +125,6 @@ public class ComputationNode : MonoBehaviour {
 	}
 		
 	void HandleInputs() {
-		if (!Input.anyKeyDown)
-			return;
 
 		var slot = -1;
 		if (Input.GetKeyDown (KeyCode.Alpha1)) {
@@ -145,6 +143,7 @@ public class ComputationNode : MonoBehaviour {
 
 		if (stack.IsDeployable (slot)) {
 			var job = stack.GetSlot (slot);
+			Debug.Log ("Consider deployment of " + job.jobType + " from slot " + slot);
 			if (OnConsiderDeployment != null)
 				OnConsiderDeployment (job, this);
 		}

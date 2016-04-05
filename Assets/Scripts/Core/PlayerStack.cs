@@ -179,13 +179,13 @@ public class PlayerStack : MonoBehaviour {
 	}
 
 	public bool IsDeployable(int slot) {
-		if (slot > 0 && slot < queue.Count)
+		if (slot >= 0 && slot < queue.Count)
 			return queue [slot].status == JobStatus.Deployable;
 		return false;
 	}
 
 	public ProcJob GetSlot(int slot) {
-		if (slot > 0 && slot < queue.Count)
+		if (slot >= 0 && slot < queue.Count)
 			return queue [slot];
 		return null;
 	}

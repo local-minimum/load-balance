@@ -37,6 +37,10 @@ public class PlayerCredits : MonoBehaviour {
 		return true;
 	}
 
+	public bool CanAfford(int amount) {
+		return amount <= credits;
+	}
+
 	void Awake() {
 		player = GetComponent<Player> ();
 	}
