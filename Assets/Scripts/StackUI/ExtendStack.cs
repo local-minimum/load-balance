@@ -55,6 +55,10 @@ public class ExtendStack : MonoBehaviour {
 		if (eventType == StackEventType.Expanded) {
 			// Debug.Log ("Slot " + slot + " active");
 			stackExtensions [slot - 1].SetActiveMonitor (playerStack, slot);
+		} else if (eventType == StackEventType.Compacted) {
+			for (int i = slot; i < stackSlots.Length; i++) {
+				stackSlots [i].ShowJob (playerStack.GetSlot (i));
+			}
 		}
 	}
 

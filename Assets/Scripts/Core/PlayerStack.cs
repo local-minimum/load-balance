@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public enum StackEventType {Expanded, Expired};
+public enum StackEventType {Expanded, Expired, Compacted};
 
 public delegate void StackEvent(int slot, StackEventType eventType);
 public delegate void JobEvent(int slot, ProcJob job);
@@ -116,6 +116,7 @@ public class PlayerStack : MonoBehaviour {
 				job.jobType = skill;
 				job.playerId = player.playerIdentity;
 				job.Construct (SkillSystem.getSkill (skill).productionTime * player.productionSpeedFactor);
+				job.OnStatusChange += HandleNewStatusForStackJob;
 				queue.Add (job);
 				if (OnJobEvent != null)
 					OnJobEvent (queue.IndexOf (job), job);
@@ -124,6 +125,15 @@ public class PlayerStack : MonoBehaviour {
 					OnJobEvent (-1, null);
 			}
 		}
+	}
+
+	void HandleNewStatusForStackJob (ProcJob job, JobStatus status)
+	{
+		if (status == JobStatus.Expired || status == JobStatus.Deployed) {			
+			job.OnStatusChange -= HandleNewStatusForStackJob;
+			PackQueue ();
+		} 
+
 	}
 
 	void ForceZeroProgress(int slot) {
@@ -166,6 +176,22 @@ public class PlayerStack : MonoBehaviour {
 		}
 
 		monitoringExpansions = false;
+	}
+
+	public void PackQueue() {
+		Debug.Log ("Packing Queue start length " + queue.Count);
+		int i = 0;
+		while (i < queue.Count) {
+			var job = queue [i];
+			if (job.status == JobStatus.UnderConstruction || job.status == JobStatus.Deployable) {
+				i++;
+			} else {
+				queue.Remove (job);
+				if (OnStackChange != null)
+					OnStackChange (i, StackEventType.Compacted);
+			}
+		}
+		Debug.Log ("Packing Queue pack done length " + queue.Count);
 	}
 
 	public void TrimQueue() {

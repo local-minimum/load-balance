@@ -89,9 +89,10 @@ public class SkillSystem : MonoBehaviour {
 
 	public static int calculateDeploymentCost(ProcSkills skill, int priority, float duration) {
 		//TODO: Add modifiers for various jobs
-		float modifier = 1;
-
-		return Mathf.RoundToInt(modifier * (1f + Mathf.Log(priority)) * (1 + Mathf.Log10(duration / 60f)));
+		float modifier = 1000f;
+		var cost = Mathf.RoundToInt(modifier * (1f + Mathf.Log(1 + priority)) * Mathf.Log(4f + duration / 5f, 2f));
+		Debug.Log ("Calculated deployment cost for " + skill.ToString () + " Prio: " + priority + " Duration: " + duration + " Cost: " + cost);
+		return cost;
 	}
 
 }

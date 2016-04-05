@@ -19,10 +19,16 @@ public class StackSlot : MonoBehaviour {
 	}
 
 	public void NoJob() {
+		this.job = null;
 		maskImage.fillAmount = 0;
 	}
 
 	public void ShowJob(ProcJob job) {
+		if (job == null) {
+			NoJob ();
+			return;
+		}
+
 		if (job.status == JobStatus.Deployable || job.status == JobStatus.UnderConstruction) {
 			job.OnStatusChange += HandleJobStatusChange;
 			if (this.job != null)
@@ -67,7 +73,7 @@ public class StackSlot : MonoBehaviour {
 			yield return new WaitForSeconds (updateFrequency);
 		}
 
-		if (job.status == JobStatus.Deployable) {
+		if (job && job.status == JobStatus.Deployable) {
 			maskImage.fillAmount = 1f;
 			//TODO: Some nice ready-effect?
 		} else {

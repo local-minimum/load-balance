@@ -60,7 +60,8 @@ public class ProcJob : MonoBehaviour {
 		node.AddJob (this, priority);
 		statusStart = Time.timeSinceLevelLoad;
 		statusEnd = statusStart + duration;
-		status = JobStatus.Deployed;	
+		status = JobStatus.Deployed;
+		Debug.Log (jobType + " is deployed");
 		if (OnStatusChange != null)
 			OnStatusChange (this, status);
 	}

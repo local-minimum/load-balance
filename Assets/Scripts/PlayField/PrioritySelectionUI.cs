@@ -8,6 +8,7 @@ public class PrioritySelectionUI : MonoBehaviour {
 	Player player;
 	int priority = 0;
 	float duration = 0;
+	int stackSlot = 0;
 
 	[SerializeField] float minDuration = 10f;
 	[SerializeField] float maxDuration = 180f;
@@ -20,11 +21,12 @@ public class PrioritySelectionUI : MonoBehaviour {
 		ComputationNode.OnConsiderDeployment -= HandleConsiderDeployment;
 	}
 
-	void HandleConsiderDeployment (ProcJob job, ComputationNode node)
+	void HandleConsiderDeployment (ProcJob job, ComputationNode node, int stackSlot)
 	{
 		if (job.playerId == Player.LocalPlayerIdentity) {
 			this.job = job;
 			this.node = node;
+			this.stackSlot = stackSlot;
 			player = Player.GetPlayer (job.playerId);
 			UpdateUI ();
 		}
@@ -56,7 +58,7 @@ public class PrioritySelectionUI : MonoBehaviour {
 			GUILayout.BeginArea (new Rect (200, 10, 150, 100));
 			GUILayout.BeginVertical ();
 
-			GUILayout.Label (job.jobType.ToString());
+			GUILayout.Label ((stackSlot + 1) + ": " + job.jobType.ToString());
 
 			GUILayout.BeginHorizontal ();
 			GUILayout.Label ("Priority");

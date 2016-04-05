@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 public delegate void AwardWorkDone(ProcJob job, int award);
-public delegate void ConsiderDeployment(ProcJob job, ComputationNode node);
+public delegate void ConsiderDeployment(ProcJob job, ComputationNode node, int stackSlot);
 
 public class ComputationNode : MonoBehaviour {
 
@@ -145,8 +145,8 @@ public class ComputationNode : MonoBehaviour {
 			var job = stack.GetSlot (slot);
 			Debug.Log ("Consider deployment of " + job.jobType + " from slot " + slot);
 			if (OnConsiderDeployment != null)
-				OnConsiderDeployment (job, this);
-		}
+				OnConsiderDeployment (job, this, slot);
+		} 
 	}
 
 	public string[] GetCachedFrame(int size, int frame) {
